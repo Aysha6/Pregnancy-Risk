@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pregnancy Risk Result</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('/static/image.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .result-box {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+      width: 400px;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 20px;
+      margin: 10px 0;
+    }
+
+    .high-risk {
+      color: #ff4c4c;
+      font-weight: bold;
+    }
+
+    .low-risk {
+      color: #4cff4c;
+      font-weight: bold;
+    }
+
+    button {
+      margin-top: 20px;
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #3e8e41;
+    }
+  </style>
+</head>
+<body>
+  <div class="result-box">
+    <h1>Prediction Result</h1>
+    <p><strong>Patient Name:</strong> {{ name }}</p>
+    <p>
+      <strong>Predicted Risk Level:</strong>
+      {% if prediction == 'High Risk' %}
+        <span class="high-risk">{{ prediction }}</span>
+      {% else %}
+        <span class="low-risk">{{ prediction }}</span>
+      {% endif %}
+    </p>
+    <form action="/" method="get">
+      <button type="submit">← Back</button>
+    </form>
+  </div>
+</body>
+</html>
