@@ -106,7 +106,8 @@ When building or editing the HTML form (`templates/index.html`), make sure your 
 	- Save the imputer used at training time and load it at inference, applying the same imputation.
 	- Validate user input on the client side and server side, and refuse/ask for missing required fields.
 - Version mismatches: if you get pickle load errors, ensure scikit-learn versions used for training and inference are compatible.
-
+  ## gunicorn
+- for render deployment
 ## Next steps / Improvements
 
 - Save the imputer object when training and load it in `app.py` to guarantee consistent imputation.
